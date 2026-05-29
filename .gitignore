@@ -1,0 +1,13 @@
+# Default-deny: ~/.claude holds sensitive session data (transcripts, history,
+# credentials, caches). Ignore every top-level entry, then allowlist only the
+# config + prompt files worth versioning. New files are ignored unless added here.
+/*
+
+# Allowlist
+!/.gitignore
+!/system-prompt-voice.md
+!/settings.json
+!/statusline.sh
+!/CLAUDE.backup.md
+!/commands/
+!/skills/

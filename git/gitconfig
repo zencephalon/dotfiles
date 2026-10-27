@@ -1,0 +1,14 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Matthew Bunday
+	email = mkbunday@gmail.com
+[diff]
+	external = difft
+[alias]
+	co = checkout
+[core]
+	excludesfile = ~/.config/git/ignore
+[pull]
+	rebase = true
+[init]
+	defaultBranch = main

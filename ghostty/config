@@ -1,0 +1,16 @@
+# written by the readability bench — every key verified against Ghostty 1.3.1
+font-family = Maple Mono NF CN
+font-size = 16
+adjust-cell-height = +22%
+adjust-cell-width = +2%
+font-codepoint-map = U+4E00-U+9FFF,U+3000-U+30FF,U+FF00-U+FFEF=Maple Mono NF CN
+theme = dark:Kanagawa Wave,light:Catppuccin Latte
+minimum-contrast = 1.15
+window-colorspace = display-p3
+window-padding-x = 16
+window-padding-y = 16
+window-padding-balance = true
+cursor-style = block
+cursor-style-blink = false
+mouse-hide-while-typing = true
+macos-option-as-alt = true

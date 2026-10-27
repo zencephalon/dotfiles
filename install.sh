@@ -21,7 +21,8 @@ if ! command -v brew >/dev/null; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
-brew bundle --file="$DOT/Brewfile" --no-upgrade
+for t in nikitabobko/tap steipete/tap; do brew tap "$t" >/dev/null 2>&1 || true; brew trust "$t" >/dev/null 2>&1 || true; done
+brew bundle --file="$DOT/Brewfile" --no-upgrade || echo "  some Brewfile entries failed; carrying on"
 
 echo "== claude code"
 command -v claude >/dev/null || curl -fsSL https://claude.ai/install.sh | bash
@@ -49,7 +50,8 @@ echo "== secrets"
 echo "== shell"
 FISH="$(command -v fish)"
 grep -q "$FISH" /etc/shells || echo "$FISH" | sudo tee -a /etc/shells >/dev/null
-[ "$SHELL" = "$FISH" ] || chsh -s "$FISH"
+CUR="$(dscl . -read "$HOME" UserShell 2>/dev/null | awk '{print $2}')"
+[ "$CUR" = "$FISH" ] || chsh -s "$FISH"
 
 echo "== asdf"
 for p in nodejs python ruby; do asdf plugin list 2>/dev/null | grep -qx "$p" || asdf plugin add "$p"; done

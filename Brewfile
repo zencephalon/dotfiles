@@ -20,7 +20,7 @@ brew "difftastic"
 brew "gh"
 brew "jj"
 brew "uv"
-brew "oven-sh/bun/bun"
+# bun: curl -fsSL https://bun.sh/install | bash (tap is untrusted by brew)
 
 # personal services
 brew "gogcli"          # gmail + calendar via `gog`

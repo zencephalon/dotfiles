@@ -6,7 +6,7 @@ Matt + Claude, portable. Lands us on a new machine with the tools and the voice 
 
 ```sh
 xcode-select --install
-git clone git@github.com:zencephalon/dotfiles.git ~/prj/dotfiles
+git clone https://github.com/zencephalon/dotfiles.git ~/prj/dotfiles
 ~/prj/dotfiles/install.sh
 gh auth login
 claude          # sign in once

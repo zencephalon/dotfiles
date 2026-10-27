@@ -1,6 +1,6 @@
 {
   "cleanupPeriodDays": 99999,
-  "model": "fable",
+  "model": "opus",
   "hooks": {
     "Notification": [
       {

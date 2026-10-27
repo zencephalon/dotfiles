@@ -1,17 +1,7 @@
 {
-  "model": "opus",
+  "cleanupPeriodDays": 99999,
+  "model": "fable",
   "hooks": {
-    "Stop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "afplay ~/.claude/sounds/stop.wav",
-            "async": true
-          }
-        ]
-      }
-    ],
     "Notification": [
       {
         "hooks": [
@@ -19,6 +9,54 @@
             "type": "command",
             "command": "afplay ~/.claude/sounds/notify.wav",
             "async": true
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/zen/.holdmylid/hooks/cc-event-hook.sh Notification"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/zen/.holdmylid/hooks/cc-event-hook.sh PostToolUse"
+          }
+        ]
+      }
+    ],
+    "PostToolUseFailure": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/zen/.holdmylid/hooks/cc-event-hook.sh PostToolUseFailure"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/zen/.holdmylid/hooks/cc-event-hook.sh PreToolUse"
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/zen/.holdmylid/hooks/cc-event-hook.sh SessionEnd"
           }
         ]
       }
@@ -32,6 +70,63 @@
             "async": true
           }
         ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/zen/.holdmylid/hooks/cc-event-hook.sh SessionStart"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay ~/.claude/sounds/stop.wav",
+            "async": true
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/zen/.holdmylid/hooks/cc-event-hook.sh Stop"
+          }
+        ]
+      }
+    ],
+    "SubagentStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/zen/.holdmylid/hooks/cc-event-hook.sh SubagentStart"
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/zen/.holdmylid/hooks/cc-event-hook.sh SubagentStop"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/zen/.holdmylid/hooks/cc-event-hook.sh UserPromptSubmit"
+          }
+        ]
       }
     ]
   },
@@ -39,8 +134,25 @@
     "type": "command",
     "command": "~/.claude/statusline.sh"
   },
+  "enabledPlugins": {
+    "vercel@claude-plugins-official": true,
+    "swift-lsp@claude-plugins-official": true
+  },
   "alwaysThinkingEnabled": true,
-  "effortLevel": "xhigh",
+  "effortLevel": "low",
+  "modelSettings": {
+    "claude-fable-5": {
+      "effortLevel": "high"
+    },
+    "claude-fable-5-1": {
+      "effortLevel": "medium"
+    },
+    "claude-opus-5-5": {
+      "effortLevel": "medium"
+    }
+  },
+  "tui": "fullscreen",
+  "showThinkingSummaries": true,
   "skipDangerousModePermissionPrompt": true,
   "editorMode": "vim",
   "voiceEnabled": false
